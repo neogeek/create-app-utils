@@ -11,7 +11,9 @@ $ npm install @neogeek/create-app-utils
 
 ## Usage
 
-### `getQueryParamsFromUrl(url)`
+### URL
+
+#### `getQueryParamsFromUrl(url)`
 
 ```typescript
 import { getQueryParamsFromUrl } from '@neogeek/create-app-utils';
@@ -19,7 +21,9 @@ import { getQueryParamsFromUrl } from '@neogeek/create-app-utils';
 const { key } = getQueryParamsFromUrl('https://domain.com/?key=value');
 ```
 
-### `serializeCookie(key, value, maxAge, secure)`
+### Cookies
+
+#### `serializeCookie(key, value, maxAge, secure)`
 
 ```typescript
 import { serializeCookie } from '@neogeek/create-app-utils';
@@ -27,7 +31,9 @@ import { serializeCookie } from '@neogeek/create-app-utils';
 const cookie = serializeCookie('key', 'value', 0, true);
 ```
 
-### `generateExpireAtDate(daysFromNow)`
+### Dates
+
+#### `generateExpireAtDate(daysFromNow)`
 
 ```typescript
 import { generateExpireAtDate } from '@neogeek/create-app-utils';
@@ -35,7 +41,9 @@ import { generateExpireAtDate } from '@neogeek/create-app-utils';
 const date = generateExpireAtDate(5);
 ```
 
-### `extractDataFromToken(token)`
+### JWT
+
+#### `extractDataFromToken(token)`
 
 ```typescript
 import { extractDataFromToken } from '@neogeek/create-app-utils';
@@ -43,7 +51,7 @@ import { extractDataFromToken } from '@neogeek/create-app-utils';
 const { key } = extractDataFromToken(token);
 ```
 
-### `generateAccessToken(privateKey, data, expiresIn)`
+#### `generateAccessToken(privateKey, data, expiresIn)`
 
 ```typescript
 import { generateAccessToken } from '@neogeek/create-app-utils';
@@ -51,7 +59,7 @@ import { generateAccessToken } from '@neogeek/create-app-utils';
 const accessToken = generateAccessToken(privateKey, { key: 'value' }, date);
 ```
 
-### `generateRefreshToken(privateKey, data, expiresIn)`
+#### `generateRefreshToken(privateKey, data, expiresIn)`
 
 ```typescript
 import { generateRefreshToken } from '@neogeek/create-app-utils';
@@ -59,7 +67,7 @@ import { generateRefreshToken } from '@neogeek/create-app-utils';
 const refreshToken = generateRefreshToken(privateKey, { key: 'value' }, date);
 ```
 
-### `verifyAccessToken(publicKey, token)`
+#### `verifyAccessToken(publicKey, token)`
 
 ```typescript
 import { verifyAccessToken } from '@neogeek/create-app-utils';
@@ -67,7 +75,7 @@ import { verifyAccessToken } from '@neogeek/create-app-utils';
 const isValid = verifyAccessToken(publicKey, token);
 ```
 
-### `verifyRefreshToken(publicKey, token)`
+#### `verifyRefreshToken(publicKey, token)`
 
 ```typescript
 import { verifyRefreshToken } from '@neogeek/create-app-utils';
