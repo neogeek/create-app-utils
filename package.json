@@ -1,7 +1,7 @@
 {
   "name": "@neogeek/create-app-utils",
   "description": "@neogeek's Create App Utilities",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "node": ">=16.13.0"
   },
