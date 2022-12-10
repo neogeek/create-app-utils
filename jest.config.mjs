@@ -10,7 +10,7 @@ const jestConfig = {
   collectCoverage: true,
   coverageProvider: 'v8',
   collectCoverageFrom: ['src/**/*.ts'],
-  coveragePathIgnorePatterns: ['.d.ts', 'index.ts'],
+  coveragePathIgnorePatterns: ['index.ts'],
 };
 
 export default jestConfig;
