@@ -2,7 +2,12 @@
 
 PASSPHRASE=$1
 
+SOURCE_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
 generate() {
+
+    cd "${SOURCE_DIR}"
+
     ENV_PREFIX=$1
 
     openssl genrsa -out rsa_2048_priv.pem -passout pass:"${PASSPHRASE}" 2048 &>/dev/null
@@ -20,16 +25,16 @@ generate() {
     rm -f rsa_2048_priv.pem
     rm -f rsa_2048_pub.pem
 
-    if ! test -f ".env"; then
-        cp .env.development .env
+    if ! test -f "../.env"; then
+        cp ../.env.development ../.env
     fi
 
     if [[ "${OSTYPE}" == "darwin"* ]]; then
-        sed -i '' "s/^${ENV_PREFIX}_PRIVATE_KEY=.*/${ENV_PREFIX}_PRIVATE_KEY=${PRIVATE_KEY}/" .env
-        sed -i '' "s/^${ENV_PREFIX}_PUBLIC_KEY=.*/${ENV_PREFIX}_PUBLIC_KEY=${PUBLIC_KEY}/" .env
+        sed -i '' "s/^${ENV_PREFIX}_PRIVATE_KEY=.*/${ENV_PREFIX}_PRIVATE_KEY=${PRIVATE_KEY}/" ../.env
+        sed -i '' "s/^${ENV_PREFIX}_PUBLIC_KEY=.*/${ENV_PREFIX}_PUBLIC_KEY=${PUBLIC_KEY}/" ../.env
     else
-        sed -i "s/^${ENV_PREFIX}_PRIVATE_KEY=.*/${ENV_PREFIX}_PRIVATE_KEY=${PRIVATE_KEY}/" .env
-        sed -i "s/^${ENV_PREFIX}_PUBLIC_KEY=.*/${ENV_PREFIX}_PUBLIC_KEY=${PUBLIC_KEY}/" .env
+        sed -i "s/^${ENV_PREFIX}_PRIVATE_KEY=.*/${ENV_PREFIX}_PRIVATE_KEY=${PRIVATE_KEY}/" ../.env
+        sed -i "s/^${ENV_PREFIX}_PUBLIC_KEY=.*/${ENV_PREFIX}_PUBLIC_KEY=${PUBLIC_KEY}/" ../.env
     fi
 
 }
