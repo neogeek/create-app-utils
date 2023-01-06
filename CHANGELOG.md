@@ -1,5 +1,13 @@
 # Changelog
 
+## [v3.0.0](https://github.com/neogeek/create-app-utils/tree/v3.0.0) - (2023-01-06)
+
+[Full Changelog](https://github.com/neogeek/create-app-utils/compare/v2.0.0...v3.0.0)
+
+- [feat] JWT options [#7](https://github.com/neogeek/create-app-utils/pull/7)
+- [hotfix] Updated packages. [#6](https://github.com/neogeek/create-app-utils/pull/6)
+- [hotfix] Updated packages. [#5](https://github.com/neogeek/create-app-utils/pull/5)
+
 ## [v2.0.0](https://github.com/neogeek/create-app-utils/tree/v2.0.0) - (2022-12-22)
 
 [Full Changelog](https://github.com/neogeek/create-app-utils/compare/v1.1.0...v2.0.0)
