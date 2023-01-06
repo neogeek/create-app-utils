@@ -51,20 +51,34 @@ import { extractDataFromToken } from '@neogeek/create-app-utils';
 const { key } = extractDataFromToken(token);
 ```
 
-#### `generateAccessToken(privateKey, data, expiresIn)`
+#### `generateAccessToken(privateKey, data, options)`
 
 ```typescript
 import { generateAccessToken } from '@neogeek/create-app-utils';
 
-const accessToken = generateAccessToken(privateKey, { key: 'value' }, date);
+const accessToken = generateAccessToken(
+  privateKey,
+  { key: 'value' },
+  {
+    algorithm: 'RS512',
+    expiresIn: '15 minutes',
+  }
+);
 ```
 
-#### `generateRefreshToken(privateKey, data, expiresIn)`
+#### `generateRefreshToken(privateKey, data, options)`
 
 ```typescript
 import { generateRefreshToken } from '@neogeek/create-app-utils';
 
-const refreshToken = generateRefreshToken(privateKey, { key: 'value' }, date);
+const refreshToken = generateRefreshToken(
+  privateKey,
+  { key: 'value' },
+  {
+    algorithm: 'RS512',
+    expiresIn: '15 minutes',
+  }
+);
 ```
 
 #### `verifyAccessToken(publicKey, token)`

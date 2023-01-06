@@ -1,16 +1,18 @@
 import jwt from 'jsonwebtoken';
 
+import type { SignOptions } from 'jsonwebtoken';
+
 export const extractDataFromToken = (token: string) => jwt.decode(token);
 
 export const generateAccessToken = (
   privateKey: string,
   data: string | object | Buffer,
-  expiresIn = '15 minutes'
-) =>
-  jwt.sign(data, Buffer.from(privateKey, 'base64').toString('ascii'), {
+  options: SignOptions = {
     algorithm: 'RS512',
-    expiresIn,
-  });
+    expiresIn: '15 minutes',
+  }
+) =>
+  jwt.sign(data, Buffer.from(privateKey, 'base64').toString('ascii'), options);
 
 export const verifyAccessToken = (publicKey: string, token: string) => {
   try {
@@ -23,11 +25,13 @@ export const verifyAccessToken = (publicKey: string, token: string) => {
 
 export const generateRefreshToken = (
   privateKey: string,
-  data: string | object | Buffer
-) =>
-  jwt.sign(data, Buffer.from(privateKey, 'base64').toString('ascii'), {
+  data: string | object | Buffer,
+  options: SignOptions = {
     algorithm: 'RS512',
-  });
+    expiresIn: '15 minutes',
+  }
+) =>
+  jwt.sign(data, Buffer.from(privateKey, 'base64').toString('ascii'), options);
 
 export const verifyRefreshToken = (publicKey: string, token: string) => {
   try {
