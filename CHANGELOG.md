@@ -1,5 +1,11 @@
 # Changelog
 
+## [v3.0.1](https://github.com/neogeek/create-app-utils/tree/v3.0.1) - (2023-02-24)
+
+[Full Changelog](https://github.com/neogeek/create-app-utils/compare/v3.0.0...v3.0.1)
+
+- [hotfix] Updated packages. [#8](https://github.com/neogeek/create-app-utils/pull/8)
+
 ## [v3.0.0](https://github.com/neogeek/create-app-utils/tree/v3.0.0) - (2023-01-06)
 
 [Full Changelog](https://github.com/neogeek/create-app-utils/compare/v2.0.0...v3.0.0)
